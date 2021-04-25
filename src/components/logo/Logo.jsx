@@ -5,7 +5,6 @@ import LogoImage from "../../assets/images/logo-circular.png";
 
 const LogoContainer = styled.div`
 cursor: pointer;`;
-
 const ImageContainer = styled.div`
   position: absolute;
   top: 1rem;

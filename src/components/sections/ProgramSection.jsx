@@ -13,7 +13,7 @@ const DescriptionText = styled(Typography)`
 `;
 
 const ProgramSectionContainer = styled.div`
-  height: 100vh;
+  // height: 100vh;
   background: ${(props) => props.theme.palette.secondary.main};
 `;
 
