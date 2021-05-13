@@ -4,11 +4,12 @@ import styled from "styled-components";
 
 const LinkComponent = styled(Link)`
   text-decoration: underline;
-  color: ${(props) => props.theme.palette.primary.contrastText};
+  color: ${(props) =>
+    props.color ? props.color : props.theme.palette.primary.contrastText};
 `;
 
-function SeeMoreLink(props) {
-  return <LinkComponent>See more</LinkComponent>;
+function SeeMoreLink({ color }) {
+  return <LinkComponent color={color}>See more</LinkComponent>;
 }
 
 export default SeeMoreLink;

@@ -6,15 +6,16 @@ import ContentContainer from "../containers/ContentContainer";
 
 const NavContainer = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding-top: 2rem;
+  padding-top: 1rem;
   z-index: 9;
   position: relative;
 `;
 
 const MenusContainer = styled.div`
   display: flex;
-  width: 70%;
+  width: 45%;
   justify-content: space-between;
 `;
 

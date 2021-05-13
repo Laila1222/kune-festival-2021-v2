@@ -4,18 +4,18 @@ import styled from "styled-components";
 import SubMenu from "./SubMenu";
 
 const MenuContainer = styled.div`
-  &: hover .submenus {
+  &:hover .submenus {
     display: block;
-  } ;
+  }
 `;
 
 const MenuHeadline = styled(Typography)`
   cursor: ${(props) => (props.clickable === "true" ? "pointer" : "default")};
-
+  font-size: 1.1rem;
   &:hover {
     color: ${(props) => props.theme.palette.colors.yellow};
   }
-  transition: all .2s;
+  transition: all 0.2s;
 `;
 
 const Submenus = styled.div.attrs((props) => ({

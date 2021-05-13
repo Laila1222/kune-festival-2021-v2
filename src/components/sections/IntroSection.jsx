@@ -3,11 +3,17 @@ import React from "react";
 import styled from "styled-components";
 import ContentContainer from "../containers/ContentContainer";
 import SectionHeadline from "../headlines/SectionHeadline";
-import PlaceHolderImg from "../../assets/images/placeholder.png";
-import TextHeadline from "../headlines/TextHeadline";
-import RegularButton from "../buttons/RegularButton";
+import { overridings } from "../../themes/LightTheme";
+import {
+  artistNames,
+  firstRowArtistNames,
+  fourthRowArtistNames,
+  secondRowArtistNames,
+  thirdRowArtistNames,
+} from "../../data/artist-names";
 
-const IntroSectionContainer = styled.div``;
+const IntroSectionContainer = styled.div`
+margin-bottom: 5rem;`;
 
 const DescriptionContainer = styled.div`
   display: flex;
@@ -41,14 +47,95 @@ const LightBG = styled.div`
   background-color: ${(props) => props.theme.palette.secondary.main};
 `;
 
+const Subtitle = styled(Typography)`
+  font-size: 1.5rem;
+  color: ${(props) => props.theme.palette.primary.main};
+  text-align: center;
+`;
+
+const ArtistNamesContainer = styled(Box)`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: ${(props) => (props.mb ? props.mb : "2rem")};
+`;
+
+const ArtistName = styled(Typography)`
+  font-size: 2.4rem;
+  color: ${(props) =>
+    props.color && props.color === "orange"
+      ? props.theme.palette.colors.orange
+      : props.theme.palette.secondary.contrastText};
+`;
+
+const MoreSign = styled(Typography)`
+  font-size: 1.5rem;
+  color: ${(props) => props.theme.palette.primary.light};
+  width: fit-content;
+`;
+
 function IntroSection(props) {
+  // Decided whether it should be an orange or black name
+  const getArtistColor = (artistId) => {
+    if (artistId % 2 === 0) {
+      return "orange";
+    } else {
+      return "black";
+    }
+  };
+
   return (
     <IntroSectionContainer>
       <ContentContainer>
         <Box pt="2rem">
-          <SectionHeadline title="Intro part" component="h2" />
+          <Box mb="5rem">
+            <SectionHeadline
+              title="The lineup"
+              component="h2"
+              color={overridings.palette.primary.main}
+              marginBottom=".8rem"
+            />
+            <Subtitle component="h3" variant="body2">
+              Over 30 artists across Scandinavia and surroundings
+            </Subtitle>
+          </Box>
 
-          <DescriptionContainer>
+          <Box>
+            <ArtistNamesContainer>
+              {firstRowArtistNames.map((artist) => (
+                <ArtistName color={getArtistColor(artist.id)}>
+                  {artist.name}
+                </ArtistName>
+              ))}
+            </ArtistNamesContainer>
+            <ArtistNamesContainer>
+              {secondRowArtistNames.map((artist) => (
+                <ArtistName color={getArtistColor(artist.id)}>
+                  {artist.name}
+                </ArtistName>
+              ))}
+            </ArtistNamesContainer>
+            <ArtistNamesContainer>
+              {thirdRowArtistNames.map((artist) => (
+                <ArtistName color={getArtistColor(artist.id)}>
+                  {artist.name}
+                </ArtistName>
+              ))}
+            </ArtistNamesContainer>
+            <ArtistNamesContainer mb="1rem">
+              {fourthRowArtistNames.map((artist) => (
+                <ArtistName color={getArtistColor(artist.id)}>
+                  {artist.name}
+                </ArtistName>
+              ))}
+            </ArtistNamesContainer>
+            <Box ml="auto" mr="auto" width="fit-content">
+              <MoreSign>+ more</MoreSign>
+            </Box>
+          </Box>
+
+          {/* <DescriptionContainer>
             <DescriptionImageContainer>
               <DescriptionImage src={PlaceHolderImg} alt="Placeholder" />
             </DescriptionImageContainer>
@@ -105,7 +192,8 @@ function IntroSection(props) {
             </DescriptionText>
             <RegularButton title="Read more" />
           </DescriptionTextContainerRight>
-        </DescriptionContainer>
+        </DescriptionContainer>*/}
+        </Box>
       </ContentContainer>
     </IntroSectionContainer>
   );

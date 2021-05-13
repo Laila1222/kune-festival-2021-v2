@@ -1,7 +1,5 @@
 import "./App.css";
-import { Paper } from "@material-ui/core";
 import styled from "styled-components";
-import DarkTheme from "./themes/DarkTheme";
 import Home from "./containers/Home";
 import Vision from "./containers/Vision";
 import WhoWeAre from "./containers/WhoWeAre";
@@ -17,16 +15,11 @@ import Hangout from "./containers/Hangout";
 import Map from "./containers/Map";
 import Location from "./containers/Location";
 import ThemeProvider from "./themes/ThemeProvider";
-
-const BackgroundPaper = styled(Paper)`
-  height: 100vh;
-`;
+import LightTheme from "./themes/LightTheme";
 
 function App() {
   return (
-    <ThemeProvider theme={DarkTheme}>
-      <BackgroundPaper>
-        
+    <ThemeProvider theme={LightTheme}>
         <Switch>
           <Route exact path="/">
             <Home />
@@ -80,7 +73,6 @@ function App() {
             <Hangout />
           </Route>
         </Switch>
-      </BackgroundPaper>
     </ThemeProvider>
   );
 }

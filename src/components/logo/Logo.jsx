@@ -1,13 +1,14 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import styled from "styled-components";
-import LogoImage from "../../assets/images/logo-circular.png";
+import LogoImage from "../../assets/images/logo-rectangle.png";
 
 const LogoContainer = styled.div`
 cursor: pointer;`;
+
 const ImageContainer = styled.div`
-  position: absolute;
-  top: 1rem;
+  /* position: absolute;
+  top: 1rem; */
 `;
 
 const Image = styled.img``;
@@ -20,7 +21,7 @@ function Logo(props) {
   return (
     <LogoContainer onClick={() => handleOnclick()}>
       <ImageContainer>
-        <Image src={LogoImage} height="60" width="60" alt="Kune logo" />
+        <Image src={LogoImage}  width="180" alt="Kune logo" />
       </ImageContainer>
     </LogoContainer>
   );

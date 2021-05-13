@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 const ContentContainerComp = styled.div`
-  width: 85%;
+  width: 83%;
   padding-top: ${props => props.margintop ? props.margintop : '2rem'};
   margin-bottom: 2rem;
   margin-left: auto;

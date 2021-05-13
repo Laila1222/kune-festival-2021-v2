@@ -6,7 +6,7 @@ import { Typography } from "@material-ui/core";
 
 const SubMenuComp = styled(Typography)`
   color: ${(props) => props.theme.palette.primary.contrastText};
-
+  font-size: 1.1rem;
   &:hover {
     color: ${(props) => props.theme.palette.colors.yellow};
     transition: all 0.2s;
