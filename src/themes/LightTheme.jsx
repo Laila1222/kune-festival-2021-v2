@@ -51,9 +51,30 @@ export const overridings = {
     spacing: {
       gutterSmall: 2,
     },
-    body1: {},
-    body2: {},
-    h5: {},
+    body1: {
+      "@media (max-width: 960px)": {
+        fontSize: "0.9rem",
+      },
+    },
+    body2: {
+      "@media (max-width: 960px)": {
+        fontSize: "0.9rem",
+      },
+    },
+    h5: {
+      "@media (max-width: 960px)": {
+        fontSize: "1.4rem",
+      },
+    },
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+    },
   },
 };
 

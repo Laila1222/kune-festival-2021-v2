@@ -15,6 +15,7 @@ import PracticalSection from "../components/sections/PracticalSection";
 import TicketsSection from "../components/sections/TicketsSection";
 import VisionSection from "../components/sections/VisionSection";
 import AboutSection from "../components/sections/AboutSection";
+import NavbarMobile from "../components/navigation/NavigationMobile";
 
 const BgVideoContainer = styled.div`
   height: 60vh;
@@ -45,6 +46,10 @@ const TicketButton = styled(Button)`
   width: 12rem;
   margin-top: 1rem;
   font-weight: bold;
+
+  &:hover {
+    background: ${(props) => props.theme.palette.colors.brown};
+  }
 `;
 
 const Headline = styled(Typography)`
@@ -81,6 +86,7 @@ function Home(props) {
       </BgVideoContainer> */}
       <HeaderBg>
         <Navbar />
+        <NavbarMobile />
         <TicketButtonContainer>
           <Headline component="h1">Kune Festival</Headline>
           <Headline>2021</Headline>

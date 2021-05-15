@@ -67,3 +67,58 @@ export const fourthRowArtistNames = [
   { name: "Stamm", id: 6 },
   { name: "Pacocha", id: 7 },
 ];
+
+export const firstRowMobile = [
+  { name: "Mariah", id: 1 },
+  { name: "Vittorio", id: 2 },
+
+  { name: "Raoul", id: 3 },
+];
+
+export const secondRowMobile = [
+  { name: "Angelo", id: 4 },
+  { name: "Hector", id: 5 },
+  { name: "Mathilde", id: 6 },
+];
+
+export const thirdRowMobile = [
+  { name: "Lori", id: 7 },
+  { name: "Alin", id: 8 },
+  { name: "Anders Dahl", id: 9 },
+];
+
+export const fourthRowMobile = [
+  { name: "Tight Cherry", id: 10 },
+  { name: "Adelina", id: 11 },
+  { name: "Vlada", id: 12 },
+];
+
+export const fifthRowMobile = [
+  { name: "Marian", id: 13 },
+  { name: "DJ Mazda", id: 14 },
+  { name: "Modest", id: 15 },
+];
+
+export const sixthRowMobile = [
+  { name: "Block3", id: 16 },
+  { name: "Steen Kong", id: 17 },
+  { name: "Martinez", id: 18 },
+];
+
+export const seventhRowMobile = [
+  { name: "Tata Melchior", id: 19 },
+  { name: "Martin", id: 20 },
+  { name: "Price", id: 21 },
+];
+
+export const eighthRowMobile = [
+  { name: "Russel", id: 22 },
+  { name: "Connelly", id: 23 },
+  { name: "Harber", id: 24 },
+];
+
+export const ninthRowMobile = [
+  { name: "Luettgen", id: 25 },
+  { name: "Stamm", id: 26 },
+  { name: "Pacocha", id: 27 },
+];

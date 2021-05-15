@@ -4,7 +4,8 @@ import styled from "styled-components";
 import LogoImage from "../../assets/images/logo-rectangle.png";
 
 const LogoContainer = styled.div`
-cursor: pointer;`;
+  cursor: pointer;
+`;
 
 const ImageContainer = styled.div`
   /* position: absolute;
@@ -21,7 +22,11 @@ function Logo(props) {
   return (
     <LogoContainer onClick={() => handleOnclick()}>
       <ImageContainer>
-        <Image src={LogoImage}  width="180" alt="Kune logo" />
+        <Image
+          src={LogoImage}
+          width={props.width ? props.width : 180}
+          alt="Kune logo"
+        />
       </ImageContainer>
     </LogoContainer>
   );

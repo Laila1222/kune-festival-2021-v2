@@ -10,10 +10,20 @@ import {
   fourthRowArtistNames,
   secondRowArtistNames,
   thirdRowArtistNames,
+  firstRowMobile,
+  secondRowMobile,
+  thirdRowMobile,
+  fourthRowMobile,
+  fifthRowMobile,
+  sixthRowMobile,
+  seventhRowMobile,
+  eighthRowMobile,
+  ninthRowMobile,
 } from "../../data/artist-names";
 
 const IntroSectionContainer = styled.div`
-margin-bottom: 5rem;`;
+  margin-bottom: 5rem;
+`;
 
 const DescriptionContainer = styled.div`
   display: flex;
@@ -59,6 +69,10 @@ const ArtistNamesContainer = styled(Box)`
   justify-content: space-between;
   width: 100%;
   margin-bottom: ${(props) => (props.mb ? props.mb : "2rem")};
+
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    /* margin-bottom: 0; */
+  }
 `;
 
 const ArtistName = styled(Typography)`
@@ -67,6 +81,11 @@ const ArtistName = styled(Typography)`
     props.color && props.color === "orange"
       ? props.theme.palette.colors.orange
       : props.theme.palette.secondary.contrastText};
+
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
 `;
 
 const MoreSign = styled(Typography)`
@@ -85,6 +104,20 @@ function IntroSection(props) {
     }
   };
 
+  const Desktop = styled.div`
+    display: block;
+    @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+      display: none;
+    }
+  `;
+
+  const Mobile = styled.div`
+    display: none;
+    @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+      display: block;
+    }
+  `;
+
   return (
     <IntroSectionContainer>
       <ContentContainer>
@@ -101,7 +134,7 @@ function IntroSection(props) {
             </Subtitle>
           </Box>
 
-          <Box>
+          <Desktop>
             <ArtistNamesContainer>
               {firstRowArtistNames.map((artist) => (
                 <ArtistName color={getArtistColor(artist.id)}>
@@ -133,7 +166,62 @@ function IntroSection(props) {
             <Box ml="auto" mr="auto" width="fit-content">
               <MoreSign>+ more</MoreSign>
             </Box>
-          </Box>
+          </Desktop>
+
+          <Mobile>
+            <ArtistNamesContainer>
+              {firstRowMobile.map((artist) => (
+                <ArtistName color={getArtistColor(artist.id)}>
+                  {artist.name}
+                </ArtistName>
+              ))}
+              {secondRowMobile.map((artist) => (
+                <ArtistName color={getArtistColor(artist.id)}>
+                  {artist.name}
+                </ArtistName>
+              ))}
+              {thirdRowMobile.map((artist) => (
+                <ArtistName color={getArtistColor(artist.id)}>
+                  {artist.name}
+                </ArtistName>
+              ))}
+              {fourthRowMobile.map((artist) => (
+                <ArtistName color={getArtistColor(artist.id)}>
+                  {artist.name}
+                </ArtistName>
+              ))}
+              {fifthRowMobile.map((artist) => (
+                <ArtistName color={getArtistColor(artist.id)}>
+                  {artist.name}
+                </ArtistName>
+              ))}
+              {sixthRowMobile.map((artist) => (
+                <ArtistName color={getArtistColor(artist.id)}>
+                  {artist.name}
+                </ArtistName>
+              ))}
+              {secondRowMobile.map((artist) => (
+                <ArtistName color={getArtistColor(artist.id)}>
+                  {artist.name}
+                </ArtistName>
+              ))}
+              {seventhRowMobile.map((artist) => (
+                <ArtistName color={getArtistColor(artist.id)}>
+                  {artist.name}
+                </ArtistName>
+              ))}
+              {eighthRowMobile.map((artist) => (
+                <ArtistName color={getArtistColor(artist.id)}>
+                  {artist.name}
+                </ArtistName>
+              ))}
+              {ninthRowMobile.map((artist) => (
+                <ArtistName color={getArtistColor(artist.id)}>
+                  {artist.name}
+                </ArtistName>
+              ))}
+            </ArtistNamesContainer>
+          </Mobile>
 
           {/* <DescriptionContainer>
             <DescriptionImageContainer>
