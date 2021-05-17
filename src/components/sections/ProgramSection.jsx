@@ -16,6 +16,9 @@ const DescriptionText = styled(Typography)`
   text-align: center;
   color: ${(props) => props.theme.palette.secondary.contrastText};
   width: 90%;
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    width: 100%;
+  }
 `;
 
 const ProgramSectionContainer = styled.div`
@@ -26,11 +29,17 @@ const ProgramSectionContainer = styled.div`
 const ProgramContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    display: block;
+  }
 `;
 
 const CardContainer = styled.div`
   width: 30%;
   border-radius: 3px;
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    width: 100%;
+  }
 `;
 
 const Image = styled.img`
@@ -39,6 +48,10 @@ const Image = styled.img`
 
 const ProgramContentContainer = styled.div`
   padding: 0.5rem;
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    padding: 0;
+    margin-bottom: 2rem;
+  }
 `;
 
 const Title = styled(Typography)`
@@ -46,6 +59,9 @@ const Title = styled(Typography)`
   font-size: 2.5rem;
   width: fit-content;
   margin-bottom: 1.5rem;
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    font-size: 2rem;
+  }
 `;
 
 const ProgramText = styled(Typography)`
@@ -56,6 +72,10 @@ const ProgramText = styled(Typography)`
   font-size: 1.2rem;
   text-align: center;
   margin-bottom: 1rem;
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    width: 80%;
+    font-size: 1rem;
+  }
 `;
 
 function ProgramSection(props) {

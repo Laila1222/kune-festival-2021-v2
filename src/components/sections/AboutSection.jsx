@@ -16,6 +16,9 @@ const Title = styled(Typography)`
   width: fit-content;
   margin-bottom: 1.5rem;
   font-weight: bold;
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    font-size: 2rem;
+  }
 `;
 
 const AboutText = styled(Typography)`
@@ -23,6 +26,10 @@ const AboutText = styled(Typography)`
   color: ${(props) => props.theme.palette.secondary.contrastText};
   margin-bottom: 1rem;
   font-size: 1.1rem;
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    width: 100%;
+    font-size: 1rem;
+  }
 `;
 
 function AboutSection(props) {

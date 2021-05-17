@@ -14,6 +14,10 @@ const Title = styled(Typography)`
   font-size: 2.5rem;
   width: fit-content;
   margin-bottom: 1.5rem;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    font-size: 2rem;
+  }
 `;
 
 const VisionText = styled(Typography)`
@@ -24,6 +28,11 @@ const VisionText = styled(Typography)`
   font-size: 1.2rem;
   text-align: center;
   margin-bottom: 1rem;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    width: 80%;
+    font-size: 1rem;
+  }
 `;
 
 function VisionSection(props) {
@@ -46,15 +55,14 @@ function VisionSection(props) {
         Ullamco deserunt cillum reprehenderit voluptate anim nostrud qui.
       </VisionText>
       <Box ml="auto" mr="auto" mt="2rem" width="fit-content">
-      <RegularButton
-        title="Read more"
-        color={overridings.palette.colors.green}
-        hoverBackground={overridings.palette.colors.green}
-        hoverColor={overridings.palette.primary.main}
-        borderWidth="2px"
-      />
+        <RegularButton
+          title="Read more"
+          color={overridings.palette.colors.green}
+          hoverBackground={overridings.palette.colors.green}
+          hoverColor={overridings.palette.primary.main}
+          borderWidth="2px"
+        />
       </Box>
-      
     </VisionSectionContainer>
   );
 }
