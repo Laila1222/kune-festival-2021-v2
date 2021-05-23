@@ -16,6 +16,9 @@ import TicketsSection from "../components/sections/TicketsSection";
 import VisionSection from "../components/sections/VisionSection";
 import AboutSection from "../components/sections/AboutSection";
 import NavbarMobile from "../components/navigation/NavigationMobile";
+import TopBackgroundImage from "../assets/images/1st-group.svg"
+import SunImage from "../assets/images/sun.svg";
+import ContactSection from './../components/sections/ContactSection';
 
 const BgVideoContainer = styled.div`
   height: 60vh;
@@ -35,6 +38,10 @@ const TicketButtonContainer = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    width: 100%;
+    top: 45%;
+  }
 `;
 
 const TicketButton = styled(Button)`
@@ -46,6 +53,9 @@ const TicketButton = styled(Button)`
   width: 12rem;
   margin-top: 1rem;
   font-weight: bold;
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    width: 10rem;
+  }
 
   &:hover {
     background: ${(props) => props.theme.palette.colors.brown};
@@ -54,6 +64,9 @@ const TicketButton = styled(Button)`
 
 const Headline = styled(Typography)`
   font-size: 2.9rem;
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+  font-size: 2.5rem;
+  }
 `;
 
 const HeaderBg = styled.div`
@@ -65,6 +78,8 @@ const HeaderBg = styled.div`
   background-position: top right;
   background-size: 120%;
   position: relative;
+
+
 `;
 
 const DarkBg = styled.div`
@@ -73,6 +88,29 @@ const DarkBg = styled.div`
   position: absolute;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
 `;
+
+const BgImage = styled.img`
+margin-top: 25rem;
+width: 100%;
+position: relative;
+z-index: 2;
+
+@media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+  position: absolute;
+  bottom: -2rem;
+}
+`
+
+const SunImageComp = styled.img`
+  position: absolute;
+  top: 14rem;
+  right:13%;
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    width: 5rem;
+    top: 8rem;
+    right: 2rem;
+  }
+`
 
 function Home(props) {
   return (
@@ -92,7 +130,9 @@ function Home(props) {
           <Headline>2021</Headline>
           <TicketButton variant="outlined">Tickets</TicketButton>
         </TicketButtonContainer>
-      </HeaderBg>
+        <SunImageComp src={SunImage} />
+        <BgImage src={TopBackgroundImage} />
+      </HeaderBg >
 
       <IntroSection />
 
@@ -101,6 +141,8 @@ function Home(props) {
       <ProgramSection />
 
       <AboutSection />
+
+      <ContactSection />
 
       {/* <PracticalSection />
 

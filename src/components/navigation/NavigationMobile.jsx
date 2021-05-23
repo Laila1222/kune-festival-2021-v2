@@ -5,6 +5,7 @@ import { slide as Menu } from "react-burger-menu";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import NavMenusMobile from "./NavMenusMobile";
+import Logo from '../logo/Logo';
 
 const NavigationMobile = styled.div`
   display: none;
@@ -14,15 +15,23 @@ const NavigationMobile = styled.div`
 `;
 
 const MainContainer = styled(Box)`
-  background: ${(props) => props.theme.palette.primary.main};
+  background: ${(props) => props.theme.palette.secondary.main};
   width: 100%;
   position: fixed;
   z-index: 10;
 `;
 
+const LogoContainer = styled.div`
+  padding-top: .7rem;
+  margin-left: 2rem;
+`
+
 function NavbarMobile(props) {
   return (
-    <MainContainer>
+    <NavigationMobile>
+    <MainContainer> 
+      <LogoContainer> <Logo /></LogoContainer>
+     
       <Menu
         pageWrapId={"page-wrap"}
         outerContainerId={"outer-container"}
@@ -32,6 +41,7 @@ function NavbarMobile(props) {
         <NavMenusMobile />
       </Menu>
     </MainContainer>
+    </NavigationMobile>
   );
 }
 

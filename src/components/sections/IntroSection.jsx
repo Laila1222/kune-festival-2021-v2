@@ -20,9 +20,18 @@ import {
   eighthRowMobile,
   ninthRowMobile,
 } from "../../data/artist-names";
+import SunImage from "../../assets/images/sun.svg";
 
 const IntroSectionContainer = styled.div`
   margin-bottom: 5rem;
+  margin-top: 7rem;
+  position: relative;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+  
 `;
 
 const DescriptionContainer = styled.div`
@@ -61,9 +70,14 @@ const Subtitle = styled(Typography)`
   font-size: 1.5rem;
   color: ${(props) => props.theme.palette.primary.main};
   text-align: center;
+  position: relative;
+  z-index: 3;
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    color: ${props => props.theme.palette.primary.contrastText};
+  }
 `;
 
-const ArtistNamesContainer = styled(Box)`
+const ArtistNamesContainer = styled(Box)` 
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -92,6 +106,7 @@ const MoreSign = styled(Typography)`
   font-size: 1.5rem;
   color: ${(props) => props.theme.palette.primary.light};
   width: fit-content;
+  cursor: pointer;
 `;
 
 function IntroSection(props) {
@@ -106,6 +121,7 @@ function IntroSection(props) {
 
   const Desktop = styled.div`
     display: block;
+    padding-top: 5rem;
     @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
       display: none;
     }
@@ -118,9 +134,22 @@ function IntroSection(props) {
     }
   `;
 
+
+  const SunImageComp = styled.img`
+  position: absolute;
+  right: 13%;
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    width: 5rem;
+    top: -8rem;
+  }
+  `
+  
+
+
   return (
     <IntroSectionContainer>
       <ContentContainer>
+        <SunImageComp src={SunImage} />
         <Box pt="2rem">
           <Box mb="5rem">
             <SectionHeadline

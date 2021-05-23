@@ -3,10 +3,14 @@ import React from "react";
 import styled from "styled-components";
 import { overridings } from "../../themes/LightTheme";
 import RegularButton from "../buttons/RegularButton";
+import VisionImage from "../../assets/images/our-vision.svg";
 
 const VisionSectionContainer = styled(Box)`
   min-height: 100vh;
-  padding-top: 10rem;
+  padding-top: 3rem;
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    padding-top: 0rem;
+  }
 `;
 
 const Title = styled(Typography)`
@@ -23,7 +27,7 @@ const Title = styled(Typography)`
 const VisionText = styled(Typography)`
   margin-left: auto;
   margin-right: auto;
-  width: 45%;
+  width: 48%;
   color: ${(props) => props.theme.palette.secondary.contrastText};
   font-size: 1.2rem;
   text-align: center;
@@ -35,9 +39,15 @@ const VisionText = styled(Typography)`
   }
 `;
 
+const VisionImageComp = styled.img`
+  width: 100%;
+
+`
+
 function VisionSection(props) {
   return (
     <VisionSectionContainer>
+      <Box mb="2rem">
       <Box ml="auto" mr="auto" width="fit-content">
         <Title variant="h4">Our vision</Title>
       </Box>
@@ -63,6 +73,8 @@ function VisionSection(props) {
           borderWidth="2px"
         />
       </Box>
+      </Box>
+      <VisionImageComp src={VisionImage} />
     </VisionSectionContainer>
   );
 }

@@ -4,10 +4,11 @@ import styled from "styled-components";
 import RegularButton from "../buttons/RegularButton";
 import ContentContainer from "../containers/ContentContainer";
 import { overridings } from "../../themes/LightTheme";
+import AboutImage from "../about-image/AboutImage";
 
 const AboutContainer = styled(Box)`
   min-height: 100vh;
-  padding-top: 18rem;
+  padding-top: 6rem;
 `;
 
 const Title = styled(Typography)`
@@ -56,6 +57,7 @@ function AboutSection(props) {
           borderWidth="2px"
         />
       </ContentContainer>
+      <AboutImage />
     </AboutContainer>
   );
 }

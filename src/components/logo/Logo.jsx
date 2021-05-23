@@ -12,7 +12,11 @@ const ImageContainer = styled.div`
   top: 1rem; */
 `;
 
-const Image = styled.img``;
+const Image = styled.img`
+@media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+  width: 150px;
+}
+`;
 
 function Logo(props) {
   const handleOnclick = () => {
