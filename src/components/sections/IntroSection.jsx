@@ -27,8 +27,16 @@ const IntroSectionContainer = styled.div`
   margin-top: 7rem;
   position: relative;
 
-  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+  @media (max-width: 1100px) {
     margin-top: 5rem;
+  }
+
+  @media (max-width: 1050px) {
+    margin-top: 4rem;
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    margin-top: 7rem;
     margin-bottom: 5rem;
   }
   
@@ -72,6 +80,10 @@ const Subtitle = styled(Typography)`
   text-align: center;
   position: relative;
   z-index: 3;
+
+  // @media (max-width: 1100px) {
+  //   f
+  // }
   @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
     color: ${props => props.theme.palette.primary.contrastText};
   }
@@ -137,10 +149,55 @@ function IntroSection(props) {
 
   const SunImageComp = styled.img`
   position: absolute;
-  right: 13%;
+  right: 15%;
+  top: -1rem;
+
+  @media (min-width: 1300px) {
+    right: 13%;
+    top: 3rem;
+  }
+
+  @media (max-width: 1300px) {
+    right: 13%;
+    top: 0;
+  }
+
+  @media (max-width: 1150px) {
+    top: -2rem;
+  }
+
+  
+  @media (max-width: 1050px) {
+    top: -3rem;
+  }
+
+  @media (max-width: 1000px) {
+    top: -5rem;
+  }
+
+
   @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
-    width: 5rem;
-    top: -8rem;
+    width: 8rem;
+    top: -3rem;
+  }
+
+  @media (max-width: 700px) {
+    width: 6rem;
+  }
+
+  @media (max-width: 550px) {
+    top: -5rem;
+  }
+
+  @media (max-width: 400px) {
+    width: 4rem;
+    top: -4rem;
+  }
+  `
+
+  const IntroContentContainer = styled(Box)`
+  @media (min-width: 1300px) {
+    padding-top: 2rem;
   }
   `
   
@@ -148,9 +205,9 @@ function IntroSection(props) {
 
   return (
     <IntroSectionContainer>
-      <ContentContainer>
+      <ContentContainer marginTop="0">
         <SunImageComp src={SunImage} />
-        <Box pt="2rem">
+        <IntroContentContainer>
           <Box mb="5rem">
             <SectionHeadline
               title="The lineup"
@@ -310,7 +367,7 @@ function IntroSection(props) {
             <RegularButton title="Read more" />
           </DescriptionTextContainerRight>
         </DescriptionContainer>*/}
-        </Box>
+        </IntroContentContainer>
       </ContentContainer>
     </IntroSectionContainer>
   );

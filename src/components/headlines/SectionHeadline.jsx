@@ -11,6 +11,10 @@ const SectionHeadlineComp = styled(Typography)`
     position: relative;
     z-index: 3;
 
+    @media (max-width: 1100px) {
+     font-size: 2.5rem;
+    }
+
   @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
     font-size: 2rem;
     color: ${props => props.theme.palette.primary.contrastText};

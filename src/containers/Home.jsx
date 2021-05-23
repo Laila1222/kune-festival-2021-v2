@@ -71,7 +71,7 @@ const Headline = styled(Typography)`
 
 const HeaderBg = styled.div`
   height: 100vh;
-  min-height: 700px;
+  min-height: 100vh;
   /* background-image: ; */
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -90,14 +90,54 @@ const DarkBg = styled.div`
 `;
 
 const BgImage = styled.img`
-margin-top: 25rem;
+margin-top: 20rem;
 width: 100%;
 position: relative;
 z-index: 2;
 
+// @media (max-width: 1200px) {
+//   margin-top: 20rem;
+// }
+
 @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
   position: absolute;
+  margin-top: 0;
   bottom: -2rem;
+}
+
+@media (max-width: 960px) {
+  
+  bottom: -16rem;
+}
+
+@media (max-width: 850px) {
+  bottom: -13rem;
+}
+
+@media (max-width: 750px) {
+  bottom: -11rem;
+}
+
+@media (max-width: 650px) {
+  bottom: -10rem;
+}
+
+
+@media (max-width: 550px) {
+  bottom: -8rem;
+}
+
+@media (max-width: 480px) {
+  bottom: -7rem;
+}
+
+
+@media (max-width: 420px) {
+  bottom: -6rem;
+}
+
+@media (max-width: 320px) {
+  bottom: -5rem;
 }
 `
 

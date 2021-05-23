@@ -8,6 +8,9 @@ import LogoImage from "../../assets/images/logo-rectangle.png";
 
 const MainContainer = styled.div`
   margin-top: 15rem;
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+    margin-top: 5rem;
+  }
 `;
 
 const Title = styled(Typography)`
@@ -54,17 +57,26 @@ top: -.5rem;
 `
 
 const LogoImageComp = styled.img`
-    position: absolute;
     width: 12rem;
-    left: 44%;
-    top: 15rem;
     z-index: 3;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
         width: 5rem;
-        top: 3rem;
-        left: 40%;
     }
 
+`
+
+const LogoContainer = styled.div`
+    z-index: 3;
+    position: absolute;
+    width: 100%;
+    bottom: 3rem;
+    @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+        bottom: 1.5rem;
+
+    }
 `
 
 function ContactSection(props) {
@@ -80,7 +92,7 @@ function ContactSection(props) {
         consequat qui ullamco exercitation labore in pariatur.
       </ContactText>
       <Box mt="8rem" position="relative" width="100%">
-          <LogoImageComp src={LogoImage} />
+         <LogoContainer ><LogoImageComp src={LogoImage} /></LogoContainer> 
       <SunImageComp src={SunImage} />
       <WaterImageComp src={WaterImage} />
       </Box>

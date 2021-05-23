@@ -24,6 +24,9 @@ const DescriptionText = styled(Typography)`
 const ProgramSectionContainer = styled.div`
   min-height: 100vh;
   padding-top: 4rem;
+  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+   padding-top: 0;
+  }
 `;
 
 const ProgramContainer = styled.div`
