@@ -16,8 +16,8 @@ import TicketsSection from "../components/sections/TicketsSection";
 import VisionSection from "../components/sections/VisionSection";
 import AboutSection from "../components/sections/AboutSection";
 import NavbarMobile from "../components/navigation/NavigationMobile";
-import TopBackgroundImage from "../assets/images/1st-group.svg"
-import SunImage from "../assets/images/sun.svg";
+import TopBackgroundImage from "../assets/images/lake-medium.png"
+import SunImage from "../assets/images/sun.png";
 import ContactSection from './../components/sections/ContactSection';
 
 const BgVideoContainer = styled.div`
@@ -145,6 +145,7 @@ const SunImageComp = styled.img`
   position: absolute;
   top: 14rem;
   right:13%;
+  width: 10rem;
   @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
     width: 5rem;
     top: 8rem;

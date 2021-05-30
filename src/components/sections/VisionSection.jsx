@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { overridings } from "../../themes/LightTheme";
 import RegularButton from "../buttons/RegularButton";
-import VisionImage from "../../assets/images/our-vision.svg";
+import VisionImage from "../../assets/images/island.png";
 
 const VisionSectionContainer = styled(Box)`
   min-height: 100vh;

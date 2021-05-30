@@ -35,6 +35,10 @@ const IntroSectionContainer = styled.div`
     margin-top: 4rem;
   }
 
+  @media (max-width: 1050px) {
+    margin-top: 3rem;
+  }
+
   @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
     margin-top: 7rem;
     margin-bottom: 5rem;
@@ -121,6 +125,105 @@ const MoreSign = styled(Typography)`
   cursor: pointer;
 `;
 
+const Desktop = styled.div`
+display: block;
+padding-top: 5rem;
+
+@media (max-width: 1050px) {
+ padding-top: 2rem;
+}
+
+@media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+  display: none;
+}
+`;
+
+const Mobile = styled.div`
+display: none;
+@media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+  display: block;
+}
+`;
+
+
+const SunImageComp = styled.img`
+position: absolute;
+right: 15%;
+top: -1rem;
+
+@media (min-width: 1300px) {
+right: 13%;
+top: 3rem;
+}
+
+@media (max-width: 1300px) {
+right: 13%;
+top: 0;
+}
+
+@media (max-width: 1150px) {
+top: -2rem;
+}
+
+
+@media (max-width: 1050px) {
+top: -3rem;
+}
+
+@media (max-width: 1000px) {
+top: -5rem;
+}
+
+
+@media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+width: 8rem;
+top: -3rem;
+}
+
+@media (max-width: 700px) {
+width: 6rem;
+}
+
+@media (max-width: 550px) {
+top: -5rem;
+}
+
+@media (max-width: 450px) {
+  top: -6rem;
+  }
+
+@media (max-width: 300px) {
+width: 5rem;
+}
+`
+
+const IntroContentContainer = styled(Box)`
+@media (min-width: 1300px) {
+padding-top: 2rem;
+}
+`
+
+const TitleContainer = styled(Box)`
+
+margin-bottom: 5rem;
+@media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
+ padding-top 7rem;
+ margin-bottom: 3rem;
+  }
+
+  @media (max-width: 700px) {
+    padding-top 5rem;
+     }
+
+     @media (max-width: 550px) {
+      padding-top 3rem;
+       }
+       @media (max-width: 450px) {
+       padding-top: 2rem;
+        }
+     
+`
+
 function IntroSection(props) {
   // Decided whether it should be an orange or black name
   const getArtistColor = (artistId) => {
@@ -131,75 +234,7 @@ function IntroSection(props) {
     }
   };
 
-  const Desktop = styled.div`
-    display: block;
-    padding-top: 5rem;
-    @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
-      display: none;
-    }
-  `;
-
-  const Mobile = styled.div`
-    display: none;
-    @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
-      display: block;
-    }
-  `;
-
-
-  const SunImageComp = styled.img`
-  position: absolute;
-  right: 15%;
-  top: -1rem;
-
-  @media (min-width: 1300px) {
-    right: 13%;
-    top: 3rem;
-  }
-
-  @media (max-width: 1300px) {
-    right: 13%;
-    top: 0;
-  }
-
-  @media (max-width: 1150px) {
-    top: -2rem;
-  }
-
-  
-  @media (max-width: 1050px) {
-    top: -3rem;
-  }
-
-  @media (max-width: 1000px) {
-    top: -5rem;
-  }
-
-
-  @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
-    width: 8rem;
-    top: -3rem;
-  }
-
-  @media (max-width: 700px) {
-    width: 6rem;
-  }
-
-  @media (max-width: 550px) {
-    top: -5rem;
-  }
-
-  @media (max-width: 400px) {
-    width: 4rem;
-    top: -4rem;
-  }
-  `
-
-  const IntroContentContainer = styled(Box)`
-  @media (min-width: 1300px) {
-    padding-top: 2rem;
-  }
-  `
+ 
   
 
 
@@ -208,7 +243,7 @@ function IntroSection(props) {
       <ContentContainer marginTop="0">
         <SunImageComp src={SunImage} />
         <IntroContentContainer>
-          <Box mb="5rem">
+          <TitleContainer mb="5rem">
             <SectionHeadline
               title="The lineup"
               component="h2"
@@ -218,7 +253,7 @@ function IntroSection(props) {
             <Subtitle component="h3" variant="body2">
               Over 30 artists across Scandinavia and surroundings
             </Subtitle>
-          </Box>
+          </TitleContainer>
 
           <Desktop>
             <ArtistNamesContainer>

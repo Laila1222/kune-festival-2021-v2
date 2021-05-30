@@ -8,6 +8,7 @@ import LogoImage from "../../assets/images/logo-rectangle.png";
 
 const MainContainer = styled.div`
   margin-top: 15rem;
+  margin-top: 25rem;
   @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
     margin-top: 5rem;
   }
