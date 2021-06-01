@@ -24,7 +24,7 @@ import SunImage from "../../assets/images/sun.svg";
 
 const IntroSectionContainer = styled.div`
   margin-bottom: 5rem;
-  margin-top: 7rem;
+  margin-top: 0rem;
   position: relative;
 
   @media (max-width: 1100px) {
