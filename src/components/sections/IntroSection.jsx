@@ -24,19 +24,33 @@ import SunImage from "../../assets/images/sun.svg";
 
 const IntroSectionContainer = styled.div`
   margin-bottom: 5rem;
-  margin-top: 0rem;
+  margin-top: -2rem;
   position: relative;
 
+ 
+
+  @media (min-width: 1200px) {
+    margin-top: -1rem;
+  }
+
+  @media (min-width: 1300px) {
+    margin-top: -4rem;
+  }
+
+  @media (min-width: 1400px) {
+    margin-top: -5rem;
+  }
+
   @media (max-width: 1100px) {
-    margin-top: 5rem;
+    margin-top: -5rem;
   }
 
   @media (max-width: 1050px) {
-    margin-top: 4rem;
+    margin-top: -4rem;
   }
 
-  @media (max-width: 1050px) {
-    margin-top: 3rem;
+  @media (max-width: 1000px) {
+    margin-top: -5rem;
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
@@ -162,22 +176,23 @@ top: 0;
 }
 
 @media (max-width: 1150px) {
-top: -2rem;
+// top: -2rem;
+right: 10%;
 }
 
 
 @media (max-width: 1050px) {
-top: -3rem;
+top: -1rem;
 }
 
 @media (max-width: 1000px) {
-top: -5rem;
+top: -2rem;
 }
 
 
 @media (max-width: ${(props) => props.theme.breakpoints.values.md}px) {
 width: 8rem;
-top: -3rem;
+top: -6rem;
 }
 
 @media (max-width: 700px) {
@@ -185,16 +200,16 @@ width: 6rem;
 }
 
 @media (max-width: 550px) {
-top: -5rem;
+display: none;
 }
 
-@media (max-width: 450px) {
-  top: -6rem;
-  }
+// @media (max-width: 450px) {
+//   top: -6rem;
+//   }
 
-@media (max-width: 300px) {
-width: 5rem;
-}
+// @media (max-width: 300px) {
+// width: 5rem;
+// }
 `
 
 const IntroContentContainer = styled(Box)`
@@ -233,10 +248,6 @@ function IntroSection(props) {
       return "black";
     }
   };
-
- 
-  
-
 
   return (
     <IntroSectionContainer>

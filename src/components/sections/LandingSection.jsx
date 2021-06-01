@@ -19,6 +19,18 @@ const HeaderBg = styled.div`
     min-height: 
   }
 
+  @media (min-width: 1200px) {
+    min-height: 800px;
+  }
+
+  @media (min-width: 1300px) {
+    min-height: 900px;
+  }
+
+  @media (min-width: 1400px) {
+    min-height: 1000px;
+  }
+
 `;
 
 const TicketButtonContainer = styled.div`
